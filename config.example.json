@@ -1,0 +1,9 @@
+{
+  "checks": [
+    {"name": "website", "type": "http", "target": "https://example.com", "timeout": 5},
+    {"name": "database", "type": "tcp", "target": "127.0.0.1:5432"},
+    {"name": "public DNS", "type": "dns", "target": "example.com"},
+    {"name": "nginx service", "type": "systemd", "target": "nginx"},
+    {"name": "certificate", "type": "tls", "target": "example.com:443", "minimum_days": 14}
+  ]
+}
