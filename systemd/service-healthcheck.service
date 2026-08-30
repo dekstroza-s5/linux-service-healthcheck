@@ -1,0 +1,12 @@
+[Unit]
+Description=Service health checks
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+User=monitoring
+ExecStart=/opt/service-healthcheck/healthcheck.py --config /etc/service-healthcheck/config.json
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
